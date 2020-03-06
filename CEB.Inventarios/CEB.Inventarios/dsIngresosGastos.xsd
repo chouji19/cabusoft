@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIngresosGastos" targetNamespace="http://tempuri.org/dsIngresosGastos.xsd" xmlns:mstns="http://tempuri.org/dsIngresosGastos.xsd" xmlns="http://tempuri.org/dsIngresosGastos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dbgoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbgoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CEB.Inventarios.Properties.Settings.GlobalReference.Default.dbgoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vIngresosGastosTableAdapter" GeneratorDataComponentClassName="vIngresosGastosTableAdapter" Name="vIngresosGastos" UserDataComponentName="vIngresosGastosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbgoConnectionString (Settings)" DbObjectName="dbgo.dbo.vIngresosGastos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT FacturaOCompra, descripcion, fecha, credito, debito FROM dbo.vIngresosGastos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FacturaOCompra" DataSetColumn="FacturaOCompra" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="credito" DataSetColumn="credito" />
+              <Mapping SourceColumn="debito" DataSetColumn="debito" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIngresosGastos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dsIngresosGastos" msprop:Generator_UserDSName="dsIngresosGastos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vIngresosGastos" msprop:Generator_TableClassName="vIngresosGastosDataTable" msprop:Generator_TableVarName="tablevIngresosGastos" msprop:Generator_TablePropName="vIngresosGastos" msprop:Generator_RowDeletingName="vIngresosGastosRowDeleting" msprop:Generator_UserTableName="vIngresosGastos" msprop:Generator_RowChangingName="vIngresosGastosRowChanging" msprop:Generator_RowEvHandlerName="vIngresosGastosRowChangeEventHandler" msprop:Generator_RowDeletedName="vIngresosGastosRowDeleted" msprop:Generator_RowEvArgName="vIngresosGastosRowChangeEvent" msprop:Generator_RowChangedName="vIngresosGastosRowChanged" msprop:Generator_RowClassName="vIngresosGastosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FacturaOCompra" msprop:Generator_ColumnVarNameInTable="columnFacturaOCompra" msprop:Generator_ColumnPropNameInRow="FacturaOCompra" msprop:Generator_ColumnPropNameInTable="FacturaOCompraColumn" msprop:Generator_UserColumnName="FacturaOCompra" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="credito" msprop:Generator_ColumnVarNameInTable="columncredito" msprop:Generator_ColumnPropNameInRow="credito" msprop:Generator_ColumnPropNameInTable="creditoColumn" msprop:Generator_UserColumnName="credito" type="xs:int" minOccurs="0" />
+              <xs:element name="debito" msprop:Generator_ColumnVarNameInTable="columndebito" msprop:Generator_ColumnPropNameInRow="debito" msprop:Generator_ColumnPropNameInTable="debitoColumn" msprop:Generator_UserColumnName="debito" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

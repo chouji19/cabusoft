@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3140e9bb38e94b1fb3c4300cba063249" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="CABUEntities.tblCategorias" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblCompras" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblEstadosProductos" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblFacturas" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblLogs" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblMovimientoProductos" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblMovimientos" Width="1.5" PointX="7.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblProductos" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblRoles" Width="1.5" PointX="2.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblSubCategorias" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CABUEntities.tblUsuarios" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="CABUEntities.FK_tblProductos_tblCategorias" ManuallyRouted="false" />
+        <AssociationConnector Association="CABUEntities.FK_tblSubCategorias_tblCategorias" ManuallyRouted="false" />
+        <AssociationConnector Association="CABUEntities.FK_tblProductos_tblEstadosProductos" ManuallyRouted="false" />
+        <AssociationConnector Association="CABUEntities.FK_tblMovimientoProductos_tblProductos" ManuallyRouted="false" />
+        <AssociationConnector Association="CABUEntities.FK_tblProductos_tblSubCategorias" ManuallyRouted="false" />
+        <AssociationConnector Association="CABUEntities.FK_tblUsuarios_tblRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CABUEntities.sysdiagrams" Width="1.5" PointX="1.4523584923950763" PointY="16.9438090254291" />
+        <EntityTypeShape EntityType="CABUEntities.tblSucursales" Width="1.5" PointX="0.577279648081064" PointY="10.110707704960698" />
+        <AssociationConnector Association="CABUEntities.FK_tblUsuarios_tblSucursales" />
+        <EntityTypeShape EntityType="CABUEntities.tblEmpresa" Width="1.5" PointX="4.2467292194472295" PointY="26.553790924397198" />
+        <AssociationConnector Association="CABUEntities.FK_tblSucursales_tblEmpresa" />
+        <AssociationConnector Association="CABUEntities.FK_tblFacturas_tblSucursales" />
+        <AssociationConnector Association="CABUEntities.FK_tblMovimientos_tblSucursales" />
+        <AssociationConnector Association="CABUEntities.FK_tblProductos_tblSucursales" />
+        <EntityTypeShape EntityType="CABUEntities.tblVentas" Width="1.5" PointX="8.6009478869852369" PointY="0.030667558326696771" />
+        <AssociationConnector Association="CABUEntities.FK_tblVentas_tblFacturas" />
+        <AssociationConnector Association="CABUEntities.FK_tblVentas_tblProductos" />
+        <AssociationConnector Association="CABUEntities.FK_tblCategorias_tblEmpresa" />
+        <EntityTypeShape EntityType="CABUEntities.vIngresosGastos" Width="1.5" PointX="6.3288463160064286" PointY="7.89136401186295" />
+        <EntityTypeShape EntityType="CABUEntities.tblPermisos" Width="1.5" PointX="5.5416693061318574" PointY="9.2301185770100531" />
+        <EntityTypeShape EntityType="CABUEntities.tblPermisosUsuarios" Width="1.5" PointX="9.971781714806232" PointY="9.4036448790708764" />
+        <AssociationConnector Association="CABUEntities.FK_tblPermisosUsuarios_tblPermisos" />
+        <AssociationConnector Association="CABUEntities.FK_tblPermisosUsuarios_tblUsuarios" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

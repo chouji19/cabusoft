@@ -1,0 +1,1422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CABUEntities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="CABUEntitiesStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="CABUEntities.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblCategorias" EntityType="CABUEntities.Store.tblCategorias" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblCompras" EntityType="CABUEntities.Store.tblCompras" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblEmpresa" EntityType="CABUEntities.Store.tblEmpresa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblEstadosProductos" EntityType="CABUEntities.Store.tblEstadosProductos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblFacturas" EntityType="CABUEntities.Store.tblFacturas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblLogs" EntityType="CABUEntities.Store.tblLogs" store:Type="Tables" store:Schema="dbo" store:Name="tblLogs">
+            <DefiningQuery>SELECT 
+      [tblLogs].[id_log] AS [id_log], 
+      [tblLogs].[descripcion] AS [descripcion], 
+      [tblLogs].[usuario] AS [usuario]
+      FROM [dbo].[tblLogs] AS [tblLogs]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblMovimientoProductos" EntityType="CABUEntities.Store.tblMovimientoProductos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblMovimientos" EntityType="CABUEntities.Store.tblMovimientos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPermisos" EntityType="CABUEntities.Store.tblPermisos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPermisosUsuarios" EntityType="CABUEntities.Store.tblPermisosUsuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblProductos" EntityType="CABUEntities.Store.tblProductos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblRoles" EntityType="CABUEntities.Store.tblRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblSubCategorias" EntityType="CABUEntities.Store.tblSubCategorias" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblSucursales" EntityType="CABUEntities.Store.tblSucursales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblUsuarios" EntityType="CABUEntities.Store.tblUsuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblVentas" EntityType="CABUEntities.Store.tblVentas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vIngresosGastos" EntityType="CABUEntities.Store.vIngresosGastos" store:Type="Views" store:Schema="dbo" store:Name="vIngresosGastos">
+            <DefiningQuery>SELECT 
+      [vIngresosGastos].[FacturaOCompra] AS [FacturaOCompra], 
+      [vIngresosGastos].[descripcion] AS [descripcion], 
+      [vIngresosGastos].[fecha] AS [fecha], 
+      [vIngresosGastos].[credito] AS [credito], 
+      [vIngresosGastos].[debito] AS [debito], 
+      [vIngresosGastos].[id_factura] AS [id_factura], 
+      [vIngresosGastos].[id_sucursal] AS [id_sucursal]
+      FROM [dbo].[vIngresosGastos] AS [vIngresosGastos]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_tblCategorias_tblEmpresa" Association="CABUEntities.Store.FK_tblCategorias_tblEmpresa">
+            <End Role="tblEmpresa" EntitySet="tblEmpresa" />
+            <End Role="tblCategorias" EntitySet="tblCategorias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblFacturas_tblSucursales" Association="CABUEntities.Store.FK_tblFacturas_tblSucursales">
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+            <End Role="tblFacturas" EntitySet="tblFacturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMovimientoProductos_tblProductos" Association="CABUEntities.Store.FK_tblMovimientoProductos_tblProductos">
+            <End Role="tblProductos" EntitySet="tblProductos" />
+            <End Role="tblMovimientoProductos" EntitySet="tblMovimientoProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMovimientos_tblSucursales" Association="CABUEntities.Store.FK_tblMovimientos_tblSucursales">
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+            <End Role="tblMovimientos" EntitySet="tblMovimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPermisosUsuarios_tblPermisos" Association="CABUEntities.Store.FK_tblPermisosUsuarios_tblPermisos">
+            <End Role="tblPermisos" EntitySet="tblPermisos" />
+            <End Role="tblPermisosUsuarios" EntitySet="tblPermisosUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPermisosUsuarios_tblUsuarios" Association="CABUEntities.Store.FK_tblPermisosUsuarios_tblUsuarios">
+            <End Role="tblUsuarios" EntitySet="tblUsuarios" />
+            <End Role="tblPermisosUsuarios" EntitySet="tblPermisosUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProductos_tblCategorias" Association="CABUEntities.Store.FK_tblProductos_tblCategorias">
+            <End Role="tblCategorias" EntitySet="tblCategorias" />
+            <End Role="tblProductos" EntitySet="tblProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProductos_tblEstadosProductos" Association="CABUEntities.Store.FK_tblProductos_tblEstadosProductos">
+            <End Role="tblEstadosProductos" EntitySet="tblEstadosProductos" />
+            <End Role="tblProductos" EntitySet="tblProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProductos_tblSubCategorias" Association="CABUEntities.Store.FK_tblProductos_tblSubCategorias">
+            <End Role="tblSubCategorias" EntitySet="tblSubCategorias" />
+            <End Role="tblProductos" EntitySet="tblProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProductos_tblSucursales" Association="CABUEntities.Store.FK_tblProductos_tblSucursales">
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+            <End Role="tblProductos" EntitySet="tblProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSubCategorias_tblCategorias" Association="CABUEntities.Store.FK_tblSubCategorias_tblCategorias">
+            <End Role="tblCategorias" EntitySet="tblCategorias" />
+            <End Role="tblSubCategorias" EntitySet="tblSubCategorias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSucursales_tblEmpresa" Association="CABUEntities.Store.FK_tblSucursales_tblEmpresa">
+            <End Role="tblEmpresa" EntitySet="tblEmpresa" />
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUsuarios_tblRoles" Association="CABUEntities.Store.FK_tblUsuarios_tblRoles">
+            <End Role="tblRoles" EntitySet="tblRoles" />
+            <End Role="tblUsuarios" EntitySet="tblUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUsuarios_tblSucursales" Association="CABUEntities.Store.FK_tblUsuarios_tblSucursales">
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+            <End Role="tblUsuarios" EntitySet="tblUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVentas_tblFacturas" Association="CABUEntities.Store.FK_tblVentas_tblFacturas">
+            <End Role="tblFacturas" EntitySet="tblFacturas" />
+            <End Role="tblVentas" EntitySet="tblVentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVentas_tblProductos" Association="CABUEntities.Store.FK_tblVentas_tblProductos">
+            <End Role="tblProductos" EntitySet="tblProductos" />
+            <End Role="tblVentas" EntitySet="tblVentas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tblCategorias">
+          <Key>
+            <PropertyRef Name="id_categoria" />
+          </Key>
+          <Property Name="id_categoria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" />
+          <Property Name="id_empresa" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCompras">
+          <Key>
+            <PropertyRef Name="id_compra" />
+          </Key>
+          <Property Name="id_compra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="valor_compra" Type="varchar" MaxLength="70" />
+          <Property Name="valor_total" Type="varchar" MaxLength="70" />
+          <Property Name="fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblEmpresa">
+          <Key>
+            <PropertyRef Name="id_empresa" />
+          </Key>
+          <Property Name="id_empresa" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="tipo_identificacion" Type="int" Nullable="false" />
+          <Property Name="identificacion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" MaxLength="150" />
+          <Property Name="contacto_nombre" Type="varchar" MaxLength="250" />
+          <Property Name="contacto_telefono" Type="varchar" MaxLength="50" />
+          <Property Name="contacto_celular" Type="varchar" MaxLength="50" />
+          <Property Name="contacto_email" Type="varchar" MaxLength="150" />
+          <Property Name="activa" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblEstadosProductos">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblFacturas">
+          <Key>
+            <PropertyRef Name="id_factura" />
+          </Key>
+          <Property Name="id_factura" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="70" />
+          <Property Name="celular" Type="varchar" MaxLength="70" />
+          <Property Name="direccion" Type="varchar" MaxLength="70" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="valor_bruto" Type="float" />
+          <Property Name="iva" Type="float" />
+          <Property Name="valor_neto" Type="float" />
+          <Property Name="usuario" Type="varchar" MaxLength="70" />
+          <Property Name="numero_factura" Type="varchar" MaxLength="50" />
+          <Property Name="id_sucursal" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'dbgo.dbo.tblLogs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tblLogs">
+          <Key>
+            <PropertyRef Name="id_log" />
+          </Key>
+          <Property Name="id_log" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="varchar(max)" />
+          <Property Name="usuario" Type="int" />
+        </EntityType>
+        <EntityType Name="tblMovimientoProductos">
+          <Key>
+            <PropertyRef Name="id_movimientoM" />
+          </Key>
+          <Property Name="id_movimientoM" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="descripcion" Type="varchar" MaxLength="350" />
+          <Property Name="id_producto" Type="int" />
+          <Property Name="valor" Type="decimal" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="total" Type="decimal" />
+          <Property Name="fecha_registro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblMovimientos">
+          <Key>
+            <PropertyRef Name="id_movimiento" />
+          </Key>
+          <Property Name="id_movimiento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="descripcion" Type="varchar" MaxLength="550" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" />
+          <Property Name="valor" Type="decimal" />
+          <Property Name="fecha_ingreso" Type="datetime" />
+          <Property Name="id_sucursal" Type="int" />
+        </EntityType>
+        <EntityType Name="tblPermisos">
+          <Key>
+            <PropertyRef Name="id_permiso" />
+          </Key>
+          <Property Name="id_permiso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="valor" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tblPermisosUsuarios">
+          <Key>
+            <PropertyRef Name="id_Permisos_usuarios" />
+          </Key>
+          <Property Name="id_permiso" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="id_Permisos_usuarios" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="tblProductos">
+          <Key>
+            <PropertyRef Name="id_producto" />
+          </Key>
+          <Property Name="id_producto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="codigo" Type="varchar" MaxLength="200" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="precio" Type="money" Nullable="false" />
+          <Property Name="existencias" Type="int" Nullable="false" />
+          <Property Name="servicio" Type="bit" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" />
+          <Property Name="marca" Type="varchar" MaxLength="50" />
+          <Property Name="id_estado" Type="int" />
+          <Property Name="fecha_ingreso" Type="datetime" />
+          <Property Name="last_update" Type="datetime" />
+          <Property Name="id_subcategoria" Type="int" />
+          <Property Name="id_categoria" Type="int" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="valor_compra" Type="decimal" Scale="2" />
+          <Property Name="imagen" Type="varchar" MaxLength="350" />
+          <Property Name="id_sucursal" Type="int" />
+        </EntityType>
+        <EntityType Name="tblRoles">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Name="id_rol" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblSubCategorias">
+          <Key>
+            <PropertyRef Name="id_subcategoria" />
+          </Key>
+          <Property Name="id_subcategoria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" />
+          <Property Name="id_categoria" Type="int" />
+        </EntityType>
+        <EntityType Name="tblSucursales">
+          <Key>
+            <PropertyRef Name="id_sucursal" />
+          </Key>
+          <Property Name="id_sucursal" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="250" />
+          <Property Name="direccion" Type="varchar" MaxLength="150" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="150" />
+          <Property Name="id_empresa" Type="int" />
+        </EntityType>
+        <EntityType Name="tblUsuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="identificacion" Type="varchar" MaxLength="50" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="apellidos" Type="varchar" MaxLength="50" />
+          <Property Name="celular" Type="varchar" MaxLength="11" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="id_rol" Type="int" />
+          <Property Name="fecha_ingreso" Type="datetime" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="id_sucursal" Type="int" />
+          <Property Name="username" Type="varchar" MaxLength="150" />
+          <Property Name="email" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="tblVentas">
+          <Key>
+            <PropertyRef Name="id_venta" />
+          </Key>
+          <Property Name="id_venta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_producto" Type="int" />
+          <Property Name="id_factura" Type="int" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="valor_unitario" Type="float" />
+          <Property Name="valor_total" Type="float" />
+          <Property Name="fecha" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'dbgo.dbo.vIngresosGastos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vIngresosGastos">
+          <Key>
+            <PropertyRef Name="id_factura" />
+          </Key>
+          <Property Name="FacturaOCompra" Type="varchar" MaxLength="23" />
+          <Property Name="descripcion" Type="varchar" MaxLength="550" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="credito" Type="float" />
+          <Property Name="debito" Type="decimal" />
+          <Property Name="id_factura" Type="int" Nullable="false" />
+          <Property Name="id_sucursal" Type="int" />
+        </EntityType>
+        <Association Name="FK_tblCategorias_tblEmpresa">
+          <End Role="tblEmpresa" Type="CABUEntities.Store.tblEmpresa" Multiplicity="0..1" />
+          <End Role="tblCategorias" Type="CABUEntities.Store.tblCategorias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpresa">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="tblCategorias">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblFacturas_tblSucursales">
+          <End Role="tblSucursales" Type="CABUEntities.Store.tblSucursales" Multiplicity="0..1" />
+          <End Role="tblFacturas" Type="CABUEntities.Store.tblFacturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSucursales">
+              <PropertyRef Name="id_sucursal" />
+            </Principal>
+            <Dependent Role="tblFacturas">
+              <PropertyRef Name="id_sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMovimientoProductos_tblProductos">
+          <End Role="tblProductos" Type="CABUEntities.Store.tblProductos" Multiplicity="0..1" />
+          <End Role="tblMovimientoProductos" Type="CABUEntities.Store.tblMovimientoProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProductos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="tblMovimientoProductos">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMovimientos_tblSucursales">
+          <End Role="tblSucursales" Type="CABUEntities.Store.tblSucursales" Multiplicity="0..1" />
+          <End Role="tblMovimientos" Type="CABUEntities.Store.tblMovimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSucursales">
+              <PropertyRef Name="id_sucursal" />
+            </Principal>
+            <Dependent Role="tblMovimientos">
+              <PropertyRef Name="id_sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPermisosUsuarios_tblPermisos">
+          <End Role="tblPermisos" Type="CABUEntities.Store.tblPermisos" Multiplicity="1" />
+          <End Role="tblPermisosUsuarios" Type="CABUEntities.Store.tblPermisosUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPermisos">
+              <PropertyRef Name="id_permiso" />
+            </Principal>
+            <Dependent Role="tblPermisosUsuarios">
+              <PropertyRef Name="id_permiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPermisosUsuarios_tblUsuarios">
+          <End Role="tblUsuarios" Type="CABUEntities.Store.tblUsuarios" Multiplicity="1" />
+          <End Role="tblPermisosUsuarios" Type="CABUEntities.Store.tblPermisosUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="tblPermisosUsuarios">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProductos_tblCategorias">
+          <End Role="tblCategorias" Type="CABUEntities.Store.tblCategorias" Multiplicity="0..1" />
+          <End Role="tblProductos" Type="CABUEntities.Store.tblProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCategorias">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="tblProductos">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProductos_tblEstadosProductos">
+          <End Role="tblEstadosProductos" Type="CABUEntities.Store.tblEstadosProductos" Multiplicity="0..1" />
+          <End Role="tblProductos" Type="CABUEntities.Store.tblProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEstadosProductos">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="tblProductos">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProductos_tblSubCategorias">
+          <End Role="tblSubCategorias" Type="CABUEntities.Store.tblSubCategorias" Multiplicity="0..1" />
+          <End Role="tblProductos" Type="CABUEntities.Store.tblProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSubCategorias">
+              <PropertyRef Name="id_subcategoria" />
+            </Principal>
+            <Dependent Role="tblProductos">
+              <PropertyRef Name="id_subcategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProductos_tblSucursales">
+          <End Role="tblSucursales" Type="CABUEntities.Store.tblSucursales" Multiplicity="0..1" />
+          <End Role="tblProductos" Type="CABUEntities.Store.tblProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSucursales">
+              <PropertyRef Name="id_sucursal" />
+            </Principal>
+            <Dependent Role="tblProductos">
+              <PropertyRef Name="id_sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSubCategorias_tblCategorias">
+          <End Role="tblCategorias" Type="CABUEntities.Store.tblCategorias" Multiplicity="0..1" />
+          <End Role="tblSubCategorias" Type="CABUEntities.Store.tblSubCategorias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCategorias">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="tblSubCategorias">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSucursales_tblEmpresa">
+          <End Role="tblEmpresa" Type="CABUEntities.Store.tblEmpresa" Multiplicity="0..1" />
+          <End Role="tblSucursales" Type="CABUEntities.Store.tblSucursales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpresa">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="tblSucursales">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUsuarios_tblRoles">
+          <End Role="tblRoles" Type="CABUEntities.Store.tblRoles" Multiplicity="0..1" />
+          <End Role="tblUsuarios" Type="CABUEntities.Store.tblUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRoles">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="tblUsuarios">
+              <PropertyRef Name="id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUsuarios_tblSucursales">
+          <End Role="tblSucursales" Type="CABUEntities.Store.tblSucursales" Multiplicity="0..1" />
+          <End Role="tblUsuarios" Type="CABUEntities.Store.tblUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSucursales">
+              <PropertyRef Name="id_sucursal" />
+            </Principal>
+            <Dependent Role="tblUsuarios">
+              <PropertyRef Name="id_sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVentas_tblFacturas">
+          <End Role="tblFacturas" Type="CABUEntities.Store.tblFacturas" Multiplicity="0..1" />
+          <End Role="tblVentas" Type="CABUEntities.Store.tblVentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFacturas">
+              <PropertyRef Name="id_factura" />
+            </Principal>
+            <Dependent Role="tblVentas">
+              <PropertyRef Name="id_factura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVentas_tblProductos">
+          <End Role="tblProductos" Type="CABUEntities.Store.tblProductos" Multiplicity="0..1" />
+          <End Role="tblVentas" Type="CABUEntities.Store.tblVentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProductos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="tblVentas">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CABUEntities" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CABUConection" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tblCategorias" EntityType="CABUEntities.tblCategorias" />
+          <EntitySet Name="tblCompras" EntityType="CABUEntities.tblCompras" />
+          <EntitySet Name="tblEstadosProductos" EntityType="CABUEntities.tblEstadosProductos" />
+          <EntitySet Name="tblFacturas" EntityType="CABUEntities.tblFacturas" />
+          <EntitySet Name="tblLogs" EntityType="CABUEntities.tblLogs" />
+          <EntitySet Name="tblMovimientoProductos" EntityType="CABUEntities.tblMovimientoProductos" />
+          <EntitySet Name="tblMovimientos" EntityType="CABUEntities.tblMovimientos" />
+          <EntitySet Name="tblProductos" EntityType="CABUEntities.tblProductos" />
+          <EntitySet Name="tblRoles" EntityType="CABUEntities.tblRoles" />
+          <EntitySet Name="tblSubCategorias" EntityType="CABUEntities.tblSubCategorias" />
+          <EntitySet Name="tblUsuarios" EntityType="CABUEntities.tblUsuarios" />
+          <AssociationSet Name="FK_tblProductos_tblCategorias" Association="CABUEntities.FK_tblProductos_tblCategorias">
+            <End Role="tblCategorias" EntitySet="tblCategorias" />
+            <End Role="tblProductos" EntitySet="tblProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSubCategorias_tblCategorias" Association="CABUEntities.FK_tblSubCategorias_tblCategorias">
+            <End Role="tblCategorias" EntitySet="tblCategorias" />
+            <End Role="tblSubCategorias" EntitySet="tblSubCategorias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProductos_tblEstadosProductos" Association="CABUEntities.FK_tblProductos_tblEstadosProductos">
+            <End Role="tblEstadosProductos" EntitySet="tblEstadosProductos" />
+            <End Role="tblProductos" EntitySet="tblProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMovimientoProductos_tblProductos" Association="CABUEntities.FK_tblMovimientoProductos_tblProductos">
+            <End Role="tblProductos" EntitySet="tblProductos" />
+            <End Role="tblMovimientoProductos" EntitySet="tblMovimientoProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProductos_tblSubCategorias" Association="CABUEntities.FK_tblProductos_tblSubCategorias">
+            <End Role="tblSubCategorias" EntitySet="tblSubCategorias" />
+            <End Role="tblProductos" EntitySet="tblProductos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUsuarios_tblRoles" Association="CABUEntities.FK_tblUsuarios_tblRoles">
+            <End Role="tblRoles" EntitySet="tblRoles" />
+            <End Role="tblUsuarios" EntitySet="tblUsuarios" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(CABUEntities.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(CABUEntities.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="sysdiagrams" EntityType="CABUEntities.sysdiagrams" />
+          <EntitySet Name="tblSucursales" EntityType="CABUEntities.tblSucursales" />
+          <AssociationSet Name="FK_tblUsuarios_tblSucursales" Association="CABUEntities.FK_tblUsuarios_tblSucursales">
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+            <End Role="tblUsuarios" EntitySet="tblUsuarios" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram1">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram1">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram1">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition1" ReturnType="Collection(CABUEntities.sp_helpdiagramdefinition1_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams1" ReturnType="Collection(CABUEntities.sp_helpdiagrams1_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram1">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams1" />
+          <EntitySet Name="tblEmpresa" EntityType="CABUEntities.tblEmpresa" />
+          <AssociationSet Name="FK_tblSucursales_tblEmpresa" Association="CABUEntities.FK_tblSucursales_tblEmpresa">
+            <End Role="tblEmpresa" EntitySet="tblEmpresa" />
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblFacturas_tblSucursales" Association="CABUEntities.FK_tblFacturas_tblSucursales">
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+            <End Role="tblFacturas" EntitySet="tblFacturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMovimientos_tblSucursales" Association="CABUEntities.FK_tblMovimientos_tblSucursales">
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+            <End Role="tblMovimientos" EntitySet="tblMovimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblProductos_tblSucursales" Association="CABUEntities.FK_tblProductos_tblSucursales">
+            <End Role="tblSucursales" EntitySet="tblSucursales" />
+            <End Role="tblProductos" EntitySet="tblProductos" />
+          </AssociationSet>
+          <EntitySet Name="tblVentas" EntityType="CABUEntities.tblVentas" />
+          <AssociationSet Name="FK_tblVentas_tblFacturas" Association="CABUEntities.FK_tblVentas_tblFacturas">
+            <End Role="tblFacturas" EntitySet="tblFacturas" />
+            <End Role="tblVentas" EntitySet="tblVentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVentas_tblProductos" Association="CABUEntities.FK_tblVentas_tblProductos">
+            <End Role="tblProductos" EntitySet="tblProductos" />
+            <End Role="tblVentas" EntitySet="tblVentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCategorias_tblEmpresa" Association="CABUEntities.FK_tblCategorias_tblEmpresa">
+            <End Role="tblEmpresa" EntitySet="tblEmpresa" />
+            <End Role="tblCategorias" EntitySet="tblCategorias" />
+          </AssociationSet>
+          <EntitySet Name="vIngresosGastos" EntityType="CABUEntities.vIngresosGastos" />
+          <EntitySet Name="tblPermisos" EntityType="CABUEntities.tblPermisos" />
+          <EntitySet Name="tblPermisosUsuarios" EntityType="CABUEntities.tblPermisosUsuarios" />
+          <AssociationSet Name="FK_tblPermisosUsuarios_tblPermisos" Association="CABUEntities.FK_tblPermisosUsuarios_tblPermisos">
+            <End Role="tblPermisos" EntitySet="tblPermisos" />
+            <End Role="tblPermisosUsuarios" EntitySet="tblPermisosUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPermisosUsuarios_tblUsuarios" Association="CABUEntities.FK_tblPermisosUsuarios_tblUsuarios">
+            <End Role="tblUsuarios" EntitySet="tblUsuarios" />
+            <End Role="tblPermisosUsuarios" EntitySet="tblPermisosUsuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblCategorias">
+          <Key>
+            <PropertyRef Name="id_categoria" />
+          </Key>
+          <Property Name="id_categoria" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tblProductos" Relationship="CABUEntities.FK_tblProductos_tblCategorias" FromRole="tblCategorias" ToRole="tblProductos" />
+          <NavigationProperty Name="tblSubCategorias" Relationship="CABUEntities.FK_tblSubCategorias_tblCategorias" FromRole="tblCategorias" ToRole="tblSubCategorias" />
+          <Property Type="Int32" Name="id_empresa" />
+          <NavigationProperty Name="tblEmpresa" Relationship="CABUEntities.FK_tblCategorias_tblEmpresa" FromRole="tblCategorias" ToRole="tblEmpresa" />
+        </EntityType>
+        <EntityType Name="tblCompras">
+          <Key>
+            <PropertyRef Name="id_compra" />
+          </Key>
+          <Property Name="id_compra" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="valor_compra" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="valor_total" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblEstadosProductos">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tblProductos" Relationship="CABUEntities.FK_tblProductos_tblEstadosProductos" FromRole="tblEstadosProductos" ToRole="tblProductos" />
+        </EntityType>
+        <EntityType Name="tblFacturas">
+          <Key>
+            <PropertyRef Name="id_factura" />
+          </Key>
+          <Property Name="id_factura" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="celular" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="valor_bruto" Type="Double" />
+          <Property Name="iva" Type="Double" />
+          <Property Name="valor_neto" Type="Double" />
+          <Property Name="usuario" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="numero_factura" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_sucursal" />
+          <NavigationProperty Name="tblSucursales" Relationship="CABUEntities.FK_tblFacturas_tblSucursales" FromRole="tblFacturas" ToRole="tblSucursales" />
+          <NavigationProperty Name="tblVentas" Relationship="CABUEntities.FK_tblVentas_tblFacturas" FromRole="tblFacturas" ToRole="tblVentas" />
+        </EntityType>
+        <EntityType Name="tblLogs">
+          <Key>
+            <PropertyRef Name="id_log" />
+          </Key>
+          <Property Name="id_log" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="usuario" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblMovimientoProductos">
+          <Key>
+            <PropertyRef Name="id_movimientoM" />
+          </Key>
+          <Property Name="id_movimientoM" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="descripcion" Type="String" MaxLength="350" Unicode="false" FixedLength="false" />
+          <Property Name="id_producto" Type="Int32" />
+          <Property Name="valor" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="total" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblProductos" Relationship="CABUEntities.FK_tblMovimientoProductos_tblProductos" FromRole="tblMovimientoProductos" ToRole="tblProductos" />
+        </EntityType>
+        <EntityType Name="tblMovimientos">
+          <Key>
+            <PropertyRef Name="id_movimiento" />
+          </Key>
+          <Property Name="id_movimiento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="descripcion" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+          <Property Name="tipo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="valor" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="3" />
+          <Property Type="Int32" Name="id_sucursal" />
+          <NavigationProperty Name="tblSucursales" Relationship="CABUEntities.FK_tblMovimientos_tblSucursales" FromRole="tblMovimientos" ToRole="tblSucursales" />
+        </EntityType>
+        <EntityType Name="tblProductos">
+          <Key>
+            <PropertyRef Name="id_producto" />
+          </Key>
+          <Property Name="id_producto" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="codigo" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="precio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="existencias" Type="Int32" Nullable="false" />
+          <Property Name="servicio" Type="Boolean" />
+          <Property Name="tipo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="marca" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="id_estado" Type="Int32" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="3" />
+          <Property Name="last_update" Type="DateTime" Precision="3" />
+          <Property Name="id_subcategoria" Type="Int32" />
+          <Property Name="id_categoria" Type="Int32" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="valor_compra" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="imagen" Type="String" MaxLength="350" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tblCategorias" Relationship="CABUEntities.FK_tblProductos_tblCategorias" FromRole="tblProductos" ToRole="tblCategorias" />
+          <NavigationProperty Name="tblEstadosProductos" Relationship="CABUEntities.FK_tblProductos_tblEstadosProductos" FromRole="tblProductos" ToRole="tblEstadosProductos" />
+          <NavigationProperty Name="tblMovimientoProductos" Relationship="CABUEntities.FK_tblMovimientoProductos_tblProductos" FromRole="tblProductos" ToRole="tblMovimientoProductos" />
+          <NavigationProperty Name="tblSubCategorias" Relationship="CABUEntities.FK_tblProductos_tblSubCategorias" FromRole="tblProductos" ToRole="tblSubCategorias" />
+          <Property Type="Int32" Name="id_sucursal" />
+          <NavigationProperty Name="tblSucursales" Relationship="CABUEntities.FK_tblProductos_tblSucursales" FromRole="tblProductos" ToRole="tblSucursales" />
+          <NavigationProperty Name="tblVentas" Relationship="CABUEntities.FK_tblVentas_tblProductos" FromRole="tblProductos" ToRole="tblVentas" />
+        </EntityType>
+        <EntityType Name="tblRoles">
+          <Key>
+            <PropertyRef Name="id_rol" />
+          </Key>
+          <Property Name="id_rol" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tblUsuarios" Relationship="CABUEntities.FK_tblUsuarios_tblRoles" FromRole="tblRoles" ToRole="tblUsuarios" />
+        </EntityType>
+        <EntityType Name="tblSubCategorias">
+          <Key>
+            <PropertyRef Name="id_subcategoria" />
+          </Key>
+          <Property Name="id_subcategoria" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="id_categoria" Type="Int32" />
+          <NavigationProperty Name="tblCategorias" Relationship="CABUEntities.FK_tblSubCategorias_tblCategorias" FromRole="tblSubCategorias" ToRole="tblCategorias" />
+          <NavigationProperty Name="tblProductos" Relationship="CABUEntities.FK_tblProductos_tblSubCategorias" FromRole="tblSubCategorias" ToRole="tblProductos" />
+        </EntityType>
+        <EntityType Name="tblUsuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="identificacion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="apellidos" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="celular" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="id_rol" Type="Int32" />
+          <Property Name="fecha_ingreso" Type="DateTime" Precision="3" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="tblRoles" Relationship="CABUEntities.FK_tblUsuarios_tblRoles" FromRole="tblUsuarios" ToRole="tblRoles" />
+          <Property Type="Int32" Name="id_sucursal" />
+          <NavigationProperty Name="tblSucursales" Relationship="CABUEntities.FK_tblUsuarios_tblSucursales" FromRole="tblUsuarios" ToRole="tblSucursales" />
+          <Property Type="String" Name="username" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblPermisosUsuarios" Relationship="CABUEntities.FK_tblPermisosUsuarios_tblUsuarios" FromRole="tblUsuarios" ToRole="tblPermisosUsuarios" />
+        </EntityType>
+        <Association Name="FK_tblProductos_tblCategorias">
+          <End Role="tblCategorias" Type="CABUEntities.tblCategorias" Multiplicity="0..1" />
+          <End Role="tblProductos" Type="CABUEntities.tblProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCategorias">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="tblProductos">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSubCategorias_tblCategorias">
+          <End Role="tblCategorias" Type="CABUEntities.tblCategorias" Multiplicity="0..1" />
+          <End Role="tblSubCategorias" Type="CABUEntities.tblSubCategorias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCategorias">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="tblSubCategorias">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProductos_tblEstadosProductos">
+          <End Role="tblEstadosProductos" Type="CABUEntities.tblEstadosProductos" Multiplicity="0..1" />
+          <End Role="tblProductos" Type="CABUEntities.tblProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEstadosProductos">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="tblProductos">
+              <PropertyRef Name="id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMovimientoProductos_tblProductos">
+          <End Role="tblProductos" Type="CABUEntities.tblProductos" Multiplicity="0..1" />
+          <End Role="tblMovimientoProductos" Type="CABUEntities.tblMovimientoProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProductos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="tblMovimientoProductos">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProductos_tblSubCategorias">
+          <End Role="tblSubCategorias" Type="CABUEntities.tblSubCategorias" Multiplicity="0..1" />
+          <End Role="tblProductos" Type="CABUEntities.tblProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSubCategorias">
+              <PropertyRef Name="id_subcategoria" />
+            </Principal>
+            <Dependent Role="tblProductos">
+              <PropertyRef Name="id_subcategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUsuarios_tblRoles">
+          <End Role="tblRoles" Type="CABUEntities.tblRoles" Multiplicity="0..1" />
+          <End Role="tblUsuarios" Type="CABUEntities.tblUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRoles">
+              <PropertyRef Name="id_rol" />
+            </Principal>
+            <Dependent Role="tblUsuarios">
+              <PropertyRef Name="id_rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tblSucursales">
+          <Key>
+            <PropertyRef Name="id_sucursal" />
+          </Key>
+          <Property Type="Int32" Name="id_sucursal" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nombre" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="direccion" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="telefono" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_empresa" />
+          <NavigationProperty Name="tblUsuarios" Relationship="CABUEntities.FK_tblUsuarios_tblSucursales" FromRole="tblSucursales" ToRole="tblUsuarios" />
+          <NavigationProperty Name="tblEmpresa" Relationship="CABUEntities.FK_tblSucursales_tblEmpresa" FromRole="tblSucursales" ToRole="tblEmpresa" />
+          <NavigationProperty Name="tblFacturas" Relationship="CABUEntities.FK_tblFacturas_tblSucursales" FromRole="tblSucursales" ToRole="tblFacturas" />
+          <NavigationProperty Name="tblMovimientos" Relationship="CABUEntities.FK_tblMovimientos_tblSucursales" FromRole="tblSucursales" ToRole="tblMovimientos" />
+          <NavigationProperty Name="tblProductos" Relationship="CABUEntities.FK_tblProductos_tblSucursales" FromRole="tblSucursales" ToRole="tblProductos" />
+        </EntityType>
+        <Association Name="FK_tblUsuarios_tblSucursales">
+          <End Type="CABUEntities.tblSucursales" Role="tblSucursales" Multiplicity="0..1" />
+          <End Type="CABUEntities.tblUsuarios" Role="tblUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSucursales">
+              <PropertyRef Name="id_sucursal" />
+            </Principal>
+            <Dependent Role="tblUsuarios">
+              <PropertyRef Name="id_sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition1_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams1_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="tblEmpresa">
+          <Key>
+            <PropertyRef Name="id_empresa" />
+          </Key>
+          <Property Type="Int32" Name="id_empresa" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="tipo_identificacion" Nullable="false" />
+          <Property Type="String" Name="identificacion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="direccion" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="contacto_nombre" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="contacto_telefono" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="contacto_celular" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="contacto_email" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="activa" />
+          <NavigationProperty Name="tblSucursales" Relationship="CABUEntities.FK_tblSucursales_tblEmpresa" FromRole="tblEmpresa" ToRole="tblSucursales" />
+          <NavigationProperty Name="tblCategorias" Relationship="CABUEntities.FK_tblCategorias_tblEmpresa" FromRole="tblEmpresa" ToRole="tblCategorias" />
+        </EntityType>
+        <Association Name="FK_tblSucursales_tblEmpresa">
+          <End Type="CABUEntities.tblEmpresa" Role="tblEmpresa" Multiplicity="0..1" />
+          <End Type="CABUEntities.tblSucursales" Role="tblSucursales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpresa">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="tblSucursales">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblFacturas_tblSucursales">
+          <End Type="CABUEntities.tblSucursales" Role="tblSucursales" Multiplicity="0..1" />
+          <End Type="CABUEntities.tblFacturas" Role="tblFacturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSucursales">
+              <PropertyRef Name="id_sucursal" />
+            </Principal>
+            <Dependent Role="tblFacturas">
+              <PropertyRef Name="id_sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMovimientos_tblSucursales">
+          <End Type="CABUEntities.tblSucursales" Role="tblSucursales" Multiplicity="0..1" />
+          <End Type="CABUEntities.tblMovimientos" Role="tblMovimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSucursales">
+              <PropertyRef Name="id_sucursal" />
+            </Principal>
+            <Dependent Role="tblMovimientos">
+              <PropertyRef Name="id_sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblProductos_tblSucursales">
+          <End Type="CABUEntities.tblSucursales" Role="tblSucursales" Multiplicity="0..1" />
+          <End Type="CABUEntities.tblProductos" Role="tblProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSucursales">
+              <PropertyRef Name="id_sucursal" />
+            </Principal>
+            <Dependent Role="tblProductos">
+              <PropertyRef Name="id_sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblVentas">
+          <Key>
+            <PropertyRef Name="id_venta" />
+          </Key>
+          <Property Type="Int32" Name="id_venta" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id_producto" />
+          <Property Type="Int32" Name="id_factura" />
+          <Property Type="Int32" Name="cantidad" />
+          <Property Type="Double" Name="valor_unitario" />
+          <Property Type="Double" Name="valor_total" />
+          <Property Type="DateTime" Name="fecha" Precision="3" />
+          <NavigationProperty Name="tblFacturas" Relationship="CABUEntities.FK_tblVentas_tblFacturas" FromRole="tblVentas" ToRole="tblFacturas" />
+          <NavigationProperty Name="tblProductos" Relationship="CABUEntities.FK_tblVentas_tblProductos" FromRole="tblVentas" ToRole="tblProductos" />
+        </EntityType>
+        <Association Name="FK_tblVentas_tblFacturas">
+          <End Type="CABUEntities.tblFacturas" Role="tblFacturas" Multiplicity="0..1" />
+          <End Type="CABUEntities.tblVentas" Role="tblVentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFacturas">
+              <PropertyRef Name="id_factura" />
+            </Principal>
+            <Dependent Role="tblVentas">
+              <PropertyRef Name="id_factura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVentas_tblProductos">
+          <End Type="CABUEntities.tblProductos" Role="tblProductos" Multiplicity="0..1" />
+          <End Type="CABUEntities.tblVentas" Role="tblVentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProductos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="tblVentas">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCategorias_tblEmpresa">
+          <End Type="CABUEntities.tblEmpresa" Role="tblEmpresa" Multiplicity="0..1" />
+          <End Type="CABUEntities.tblCategorias" Role="tblCategorias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpresa">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="tblCategorias">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vIngresosGastos">
+          <Key>
+            <PropertyRef Name="id_factura" />
+          </Key>
+          <Property Type="String" Name="FacturaOCompra" MaxLength="23" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="descripcion" MaxLength="550" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha" Precision="3" />
+          <Property Type="Double" Name="credito" />
+          <Property Type="Decimal" Name="debito" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="id_factura" Nullable="false" />
+          <Property Type="Int32" Name="id_sucursal" />
+        </EntityType>
+        <EntityType Name="tblPermisos">
+          <Key>
+            <PropertyRef Name="id_permiso" />
+          </Key>
+          <Property Type="Int32" Name="id_permiso" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="valor" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblPermisosUsuarios" Relationship="CABUEntities.FK_tblPermisosUsuarios_tblPermisos" FromRole="tblPermisos" ToRole="tblPermisosUsuarios" />
+        </EntityType>
+        <EntityType Name="tblPermisosUsuarios">
+          <Key>
+            <PropertyRef Name="id_Permisos_usuarios" />
+          </Key>
+          <Property Type="Int32" Name="id_permiso" Nullable="false" />
+          <Property Type="Int32" Name="id_usuario" Nullable="false" />
+          <Property Type="Int32" Name="id_Permisos_usuarios" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="tblPermisos" Relationship="CABUEntities.FK_tblPermisosUsuarios_tblPermisos" FromRole="tblPermisosUsuarios" ToRole="tblPermisos" />
+          <NavigationProperty Name="tblUsuarios" Relationship="CABUEntities.FK_tblPermisosUsuarios_tblUsuarios" FromRole="tblPermisosUsuarios" ToRole="tblUsuarios" />
+        </EntityType>
+        <Association Name="FK_tblPermisosUsuarios_tblPermisos">
+          <End Type="CABUEntities.tblPermisos" Role="tblPermisos" Multiplicity="1" />
+          <End Type="CABUEntities.tblPermisosUsuarios" Role="tblPermisosUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPermisos">
+              <PropertyRef Name="id_permiso" />
+            </Principal>
+            <Dependent Role="tblPermisosUsuarios">
+              <PropertyRef Name="id_permiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPermisosUsuarios_tblUsuarios">
+          <End Type="CABUEntities.tblUsuarios" Role="tblUsuarios" Multiplicity="1" />
+          <End Type="CABUEntities.tblPermisosUsuarios" Role="tblPermisosUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="tblPermisosUsuarios">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CABUEntitiesStoreContainer" CdmEntityContainer="CABUConection">
+          <EntitySetMapping Name="tblCategorias">
+            <EntityTypeMapping TypeName="CABUEntities.tblCategorias">
+              <MappingFragment StoreEntitySet="tblCategorias">
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCompras">
+            <EntityTypeMapping TypeName="CABUEntities.tblCompras">
+              <MappingFragment StoreEntitySet="tblCompras">
+                <ScalarProperty Name="id_compra" ColumnName="id_compra" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="valor_compra" ColumnName="valor_compra" />
+                <ScalarProperty Name="valor_total" ColumnName="valor_total" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEstadosProductos">
+            <EntityTypeMapping TypeName="CABUEntities.tblEstadosProductos">
+              <MappingFragment StoreEntitySet="tblEstadosProductos">
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFacturas">
+            <EntityTypeMapping TypeName="CABUEntities.tblFacturas">
+              <MappingFragment StoreEntitySet="tblFacturas">
+                <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
+                <ScalarProperty Name="numero_factura" ColumnName="numero_factura" />
+                <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="valor_bruto" ColumnName="valor_bruto" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="valor_neto" ColumnName="valor_neto" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLogs">
+            <EntityTypeMapping TypeName="CABUEntities.tblLogs">
+              <MappingFragment StoreEntitySet="tblLogs">
+                <ScalarProperty Name="id_log" ColumnName="id_log" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMovimientoProductos">
+            <EntityTypeMapping TypeName="CABUEntities.tblMovimientoProductos">
+              <MappingFragment StoreEntitySet="tblMovimientoProductos">
+                <ScalarProperty Name="id_movimientoM" ColumnName="id_movimientoM" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMovimientos">
+            <EntityTypeMapping TypeName="CABUEntities.tblMovimientos">
+              <MappingFragment StoreEntitySet="tblMovimientos">
+                <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
+                <ScalarProperty Name="id_movimiento" ColumnName="id_movimiento" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProductos">
+            <EntityTypeMapping TypeName="CABUEntities.tblProductos">
+              <MappingFragment StoreEntitySet="tblProductos">
+                <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="existencias" ColumnName="existencias" />
+                <ScalarProperty Name="servicio" ColumnName="servicio" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="last_update" ColumnName="last_update" />
+                <ScalarProperty Name="id_subcategoria" ColumnName="id_subcategoria" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="valor_compra" ColumnName="valor_compra" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRoles">
+            <EntityTypeMapping TypeName="CABUEntities.tblRoles">
+              <MappingFragment StoreEntitySet="tblRoles">
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSubCategorias">
+            <EntityTypeMapping TypeName="CABUEntities.tblSubCategorias">
+              <MappingFragment StoreEntitySet="tblSubCategorias">
+                <ScalarProperty Name="id_subcategoria" ColumnName="id_subcategoria" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsuarios">
+            <EntityTypeMapping TypeName="CABUEntities.tblUsuarios">
+              <MappingFragment StoreEntitySet="tblUsuarios">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CABUEntities.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSucursales">
+            <EntityTypeMapping TypeName="CABUEntities.tblSucursales">
+              <MappingFragment StoreEntitySet="tblSucursales">
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram1" FunctionName="CABUEntities.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram1" FunctionName="CABUEntities.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram1" FunctionName="CABUEntities.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition1" FunctionName="CABUEntities.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CABUEntities.sp_helpdiagramdefinition1_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams1" FunctionName="CABUEntities.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CABUEntities.sp_helpdiagrams1_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram1" FunctionName="CABUEntities.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams1" FunctionName="CABUEntities.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="tblEmpresa">
+            <EntityTypeMapping TypeName="CABUEntities.tblEmpresa">
+              <MappingFragment StoreEntitySet="tblEmpresa">
+                <ScalarProperty Name="activa" ColumnName="activa" />
+                <ScalarProperty Name="contacto_email" ColumnName="contacto_email" />
+                <ScalarProperty Name="contacto_celular" ColumnName="contacto_celular" />
+                <ScalarProperty Name="contacto_telefono" ColumnName="contacto_telefono" />
+                <ScalarProperty Name="contacto_nombre" ColumnName="contacto_nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+                <ScalarProperty Name="tipo_identificacion" ColumnName="tipo_identificacion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVentas">
+            <EntityTypeMapping TypeName="CABUEntities.tblVentas">
+              <MappingFragment StoreEntitySet="tblVentas">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="valor_total" ColumnName="valor_total" />
+                <ScalarProperty Name="valor_unitario" ColumnName="valor_unitario" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="id_venta" ColumnName="id_venta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vIngresosGastos">
+            <EntityTypeMapping TypeName="CABUEntities.vIngresosGastos">
+              <MappingFragment StoreEntitySet="vIngresosGastos">
+                <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
+                <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+                <ScalarProperty Name="debito" ColumnName="debito" />
+                <ScalarProperty Name="credito" ColumnName="credito" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="FacturaOCompra" ColumnName="FacturaOCompra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPermisos">
+            <EntityTypeMapping TypeName="CABUEntities.tblPermisos">
+              <MappingFragment StoreEntitySet="tblPermisos">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="id_permiso" ColumnName="id_permiso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPermisosUsuarios">
+            <EntityTypeMapping TypeName="CABUEntities.tblPermisosUsuarios">
+              <MappingFragment StoreEntitySet="tblPermisosUsuarios">
+                <ScalarProperty Name="id_Permisos_usuarios" ColumnName="id_Permisos_usuarios" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_permiso" ColumnName="id_permiso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

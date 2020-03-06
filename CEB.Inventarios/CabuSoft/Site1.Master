@@ -1,0 +1,172 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="CabuSoft.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" />
+    <link rel="stylesheet" href="css/estilosFooter.css" />
+    <link href="css/datepicker.css" rel="stylesheet" />
+    <script src="scripts/jquery.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-static-top navbar-inverse" role="navigation">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+                        <span class="sr-only">Desplegar / Ocultar Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Index.aspx">Inventarios</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navegacion-fm">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <asp:HyperLink ID="lknProducto" runat="server" Visible="false" NavigateUrl="~/Productos.aspx">Productos</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="lknCategorias" runat="server" Visible="false" NavigateUrl="~/Categorias.aspx">Categorias</asp:HyperLink>
+                        </li>
+                        <li class="dropdown">
+                            <asp:HyperLink ID="lknMenuVentas" runat="server" Visible="false" NavigateUrl="#" CssClass="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ventas <span class="caret"></span></asp:HyperLink>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <asp:HyperLink ID="lknVentas" runat="server" Visible="false" NavigateUrl="~/Ventas.aspx">Nuevo</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="lknVentas2" runat="server"  Visible="false" NavigateUrl="~/VentaLista.aspx">Ventas (Cuadricula)</asp:HyperLink>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <asp:HyperLink ID="lknConsultarFacturas"  Visible="false" runat="server" NavigateUrl="~/ConsultarFacturas.aspx">Consultar Facturas</asp:HyperLink>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <asp:HyperLink ID="lknMovimientos" Visible="false" runat="server" NavigateUrl="#" CssClass="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Movimientos <span class="caret"></span></asp:HyperLink>
+                            
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <asp:HyperLink ID="lknIngresosGastos" Visible="false" runat="server" NavigateUrl="~/IngresosGastos.aspx">Ingresos/Gastos</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="lknMovProductos" Visible="false" runat="server" NavigateUrl="~/MovimientoProductos.aspx">Productos</asp:HyperLink>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <asp:HyperLink ID="lknReportes" runat="server" Visible="false" NavigateUrl="#" CssClass="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reportes <span class="caret"></span></asp:HyperLink>
+                            
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <asp:HyperLink ID="lknReporteInventario"  Visible="false" runat="server" NavigateUrl="~/ReporteInventario.aspx">Inventarios</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="lknReporteIngresosGastos"  Visible="false" runat="server" NavigateUrl="~/ReporteIngresosGastos.aspx">Ingresos/Gastos</asp:HyperLink>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <asp:HyperLink ID="lknCrearUsuario" runat="server" NavigateUrl="~/RegistrarUsuario.aspx">Crear Usuario</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="lknIniciarSesion" runat="server" data-toggle="modal" data-target="#myModal">Iniciar Sesión</asp:HyperLink>
+                            <asp:Panel ID="pnlMenuUser" runat="server" Visible="false">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                           <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/CerrarSesion.aspx">Cerrar Sesión</asp:HyperLink>
+                                        </li>
+                                        <li>
+                                           <asp:HyperLink ID="lknSucursales" Visible="false" runat="server" NavigateUrl="~/Sucursales.aspx">Admin. Sucursales</asp:HyperLink>
+                                        </li>
+                                        <li>
+                                            <asp:HyperLink ID="lknAdminUsuarios" runat="server" NavigateUrl="~/ActivarCuentas.aspx">Admin. Cuentas</asp:HyperLink></li>
+                                        <li role="separator" class="divider"></li>
+                                    </ul>
+                                </li>
+                            </asp:Panel>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <form id="form1" runat="server">
+        <div>
+            <div class="container contenido">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div class="modal fade modal-inicio" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Iniciar Sesión</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+
+                            <div class="form-horizontal login col-lg-8 col-lg-offset-2 col-xs-9 col-md-9 col-xs-offset-1">
+                                <div class="form-group">
+                                    <label for="txtCorreo">Correo:</label>
+                                    <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtPassword">Contraseña:</label>
+                                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <asp:Button ID="btnLogin" runat="server" Text="Iniciar" CssClass="btn btn-primary" OnClick="btnLogin_Click" ValidationGroup="loginGroup" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <footer class="footer-bottom">
+        <div class="container">
+            <div class="caja-redes">
+                <a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
+                <a href="#" class="icon-button facebook"><i class="icon-facebook"></i><span></span></a>
+                <a href="#" class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap-datepicker.js"></script>
+    <script>
+        $(function () {
+            $('.datepicker').datepicker(
+                {
+                    format: 'dd/mm/yyyy'
+                }).on('changeDate', function (e) {
+                $(this).datepicker('hide');
+            });;
+        });
+    </script>
+</body>
+</html>

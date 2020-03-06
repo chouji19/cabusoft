@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6EB8DB17-8293-4A02-BAA7-B9D1E77468DA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CEB.Inventarios</RootNamespace>
+    <AssemblyName>CEB.Inventarios</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>D:\Mis Documentos\Proyectos\CabuSoft\DeployWindowsApp\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Inventarios CEB</ProductName>
+    <PublisherName>CEB Inventarios</PublisherName>
+    <SuiteName>CEB Inventarios</SuiteName>
+    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CEB.Inventarios.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>759DEB74C7271527667275106A29EECA7097EE69</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CEB.Inventarios_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>CEB.Inventarios.Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>..\..\..\..\ProyectoOsvaldo\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminMovimientos.cs" />
+    <Compile Include="comunes\ImageHandling.cs" />
+    <Compile Include="comunes\Util.cs" />
+    <Compile Include="conexion\ConexionDB.cs" />
+    <Compile Include="dbgoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbgoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbgoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbgoDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBInventariosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBInventariosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbProductos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbProductos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCategorias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCategorias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsEstados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEstados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsIngresosGastos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsIngresosGastos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsListadoProductos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsListadoProductos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPro.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsProductosVentas.cs">
+      <DependentUpon>dsProductosVentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsProductosVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProductosVentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="entidades\Factura.cs" />
+    <Compile Include="entidades\Gasto.cs" />
+    <Compile Include="entidades\ObjetoLista.cs" />
+    <Compile Include="entidades\Producto.cs" />
+    <Compile Include="entidades\ProductoVenta.cs" />
+    <Compile Include="entidades\Usuario.cs" />
+    <Compile Include="entidades\VentasProductos.cs" />
+    <Compile Include="frmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategorias.Designer.cs">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaFacturas.Designer.cs">
+      <DependentUpon>frmConsultaFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGastos.Designer.cs">
+      <DependentUpon>frmGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventario.Designer.cs">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMovimientos.Designer.cs">
+      <DependentUpon>FrmMovimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMovimientosMercancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMovimientosMercancia.Designer.cs">
+      <DependentUpon>FrmMovimientosMercancia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoProductoCustom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoProductoCustom.Designer.cs">
+      <DependentUpon>FrmNuevoProductoCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteIngresosGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteIngresosGastos.Designer.cs">
+      <DependentUpon>frmReporteIngresosGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="logica\LogicaGo.cs" />
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaVista2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentaVista2.Designer.cs">
+      <DependentUpon>VentaVista2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmCategorias.resx">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaFacturas.resx">
+      <DependentUpon>frmConsultaFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGastos.resx">
+      <DependentUpon>frmGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventario.resx">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMovimientos.resx">
+      <DependentUpon>FrmMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMovimientosMercancia.resx">
+      <DependentUpon>FrmMovimientosMercancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoProductoCustom.resx">
+      <DependentUpon>FrmNuevoProductoCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteIngresosGastos.resx">
+      <DependentUpon>frmReporteIngresosGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Content Include="DBInventarios.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DBInventarios_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DBInventarios.mdf</DependentUpon>
+    </Content>
+    <Content Include="rptFactura.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="rptIngresosGastos.rdlc" />
+    <EmbeddedResource Include="rptInventario.rdlc" />
+    <EmbeddedResource Include="Test.rdlc" />
+    <EmbeddedResource Include="VentaVista2.resx">
+      <DependentUpon>VentaVista2.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CEB.Inventarios.Key.snk" />
+    <None Include="CEB.Inventarios_TemporaryKey.pfx" />
+    <None Include="dbgoDataSet.xsc">
+      <DependentUpon>dbgoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbgoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbgoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbgoDataSet.xss">
+      <DependentUpon>dbgoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbgoDataSet1.xsc">
+      <DependentUpon>dbgoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbgoDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbgoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbgoDataSet1.xss">
+      <DependentUpon>dbgoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBInventariosDataSet.xsc">
+      <DependentUpon>DBInventariosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBInventariosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBInventariosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBInventariosDataSet.xss">
+      <DependentUpon>DBInventariosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbProductos.xsc">
+      <DependentUpon>dbProductos.xsd</DependentUpon>
+    </None>
+    <None Include="dbProductos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbProductos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbProductos.xss">
+      <DependentUpon>dbProductos.xsd</DependentUpon>
+    </None>
+    <None Include="dsCategorias.xsc">
+      <DependentUpon>dsCategorias.xsd</DependentUpon>
+    </None>
+    <None Include="dsCategorias.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCategorias.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCategorias.xss">
+      <DependentUpon>dsCategorias.xsd</DependentUpon>
+    </None>
+    <None Include="dsEstados.xsc">
+      <DependentUpon>dsEstados.xsd</DependentUpon>
+    </None>
+    <None Include="dsEstados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEstados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsEstados.xss">
+      <DependentUpon>dsEstados.xsd</DependentUpon>
+    </None>
+    <None Include="dsIngresosGastos.xsc">
+      <DependentUpon>dsIngresosGastos.xsd</DependentUpon>
+    </None>
+    <None Include="dsIngresosGastos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIngresosGastos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsIngresosGastos.xss">
+      <DependentUpon>dsIngresosGastos.xsd</DependentUpon>
+    </None>
+    <None Include="dsListadoProductos.xsc">
+      <DependentUpon>dsListadoProductos.xsd</DependentUpon>
+    </None>
+    <None Include="dsListadoProductos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsListadoProductos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsListadoProductos.xss">
+      <DependentUpon>dsListadoProductos.xsd</DependentUpon>
+    </None>
+    <None Include="dsPro.xsc">
+      <DependentUpon>dsPro.xsd</DependentUpon>
+    </None>
+    <None Include="dsPro.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPro.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsPro.xss">
+      <DependentUpon>dsPro.xsd</DependentUpon>
+    </None>
+    <None Include="dsProductosVentas.xsc">
+      <DependentUpon>dsProductosVentas.xsd</DependentUpon>
+    </None>
+    <None Include="dsProductosVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProductosVentas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsProductosVentas.xss">
+      <DependentUpon>dsProductosVentas.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logica\Database1.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\add.png" />
+    <Content Include="img\delete-icon.png" />
+    <Content Include="img\edit.png" />
+    <Content Include="img\productos.png" />
+    <Content Include="img\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 4.0 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConectDataBase\ConectDataBase.csproj">
+      <Project>{9A0A0FB6-1549-4D51-B600-6416F5B6122B}</Project>
+      <Name>ConectDataBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
